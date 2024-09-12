@@ -89,16 +89,83 @@ module led_blinker (
         end 
     end
 endmodule
+
+module passcode_display (
+    input wire CLOCK_100MHZ,
+    input wire btnL, btnU, btnR, btnC,
+    input wire LEDS_ON,
+    output reg [3:0] an,
+    output reg [6:0] seg,
+    output reg unlocked //boolean to track whether passcode has been fully entered
+);
+    reg [2:0] count; //count to track how many steps have been taken
+    
+    //initialise different displays
+    reg [3:0] an_default =  4'b1111;
+    reg [6:0] seg_default = 7'b1111111;
+    reg [3:0] an_cdisplay = 4'b1110;
+    reg [6:0] seg_cdisplay = 7'b0100111;
+    reg [3:0] an_ldisplay = 4'b1101;
+    reg [6:0] seg_ldisplay = 7'b1001111;
+    reg [3:0] an_udisplay = 4'b1011;
+    reg [6:0] seg_udisplay = 7'b1100011;
+    reg [3:0] an_rdisplay = 4'b0111;
+    reg [6:0] seg_rdisplay = 7'b0101111;
+    
+    
+   always @(posedge CLOCK_100MHZ) begin
+            if (LEDS_ON == 1'b1 && count <= 6 && unlocked == 1'b0) begin //check if all leds are on
+                an <= an_cdisplay;
+                seg <= seg_cdisplay;
+                if (an == an_cdisplay && seg == seg_cdisplay && btnC) begin
+                    count <= count + 1;
+                    an <= an_ldisplay;
+                    seg <= seg_ldisplay;
+                end
+                if (an == an_ldisplay && seg == seg_ldisplay && btnL) begin
+                    count <= count + 1;
+                    an <= an_udisplay;
+                    seg <= seg_udisplay;
+                end
+                if (an == an_udisplay && seg == seg_udisplay && btnU) begin
+                    count <= count + 1;
+                    an <= an_rdisplay;
+                    seg <= seg_rdisplay;
+                end
+                if (an == an_rdisplay && seg == seg_rdisplay && btnR) begin
+                    count <= count + 1;
+                    an <= an_cdisplay;
+                    seg <= seg_cdisplay;
+                end
+            end
+            else if (count >= 7) begin
+                unlocked <= 1'b1;
+            end
+        end
+                
+    initial begin
+        an = an_default;
+        seg = seg_default;
+        unlocked = 1'b0;
+    end
+
+endmodule
                     
 module blinky(
     input wire clk,
     input wire [2:0] sw,
-    output wire [6:0] led
+    input wire btnL, btnU, btnR,btnC,
+    output wire [6:0] led,
+    output wire [6:0] seg,
+    output wire [3:0] an
 
     );
     wire [6:0] led_start_out;
     wire [6:0] led_blink_out;
+    wire [3:0] an_passcode;
+    wire [6:0] seg_passcode;
     wire leds_on;
+    wire unlocked;
     reg [31:0] TIME_COUNT = 31'd86000000;
     
     //instantiate start seq
@@ -108,6 +175,14 @@ module blinky(
     led_blinker led_blink (clk,sw,leds_on,led_blink_out);
     
     assign led = leds_on ? led_blink_out : led_start_out;
+    
+    //instantiate passcode entering for an and seg
+    passcode_display passcode (clk, btnL, btnU, btnR, btnC, leds_on,an_passcode,seg_passcode,unlocked);
+    
+    assign an = an_passcode;
+    assign seg = seg_passcode;
+    
+    
     
     
 endmodule
