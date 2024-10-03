@@ -12,19 +12,23 @@
 
 
 module Top_Student (
-    input clk, reset, btnC, sw4, [7:0] JA,
-    output frame_begin, sending_pixels, sample_pixel,
+    input clk, btnC, sw4,
+    output cs, sdin, sclk, d_cn, resn, vccen, pmoden,
     inout ps2_clk, ps2_data,
-    input [15:0] pixel_data,
-    output cs, sdin, sclk, d_cn, resn, vccen, pmoden, [1:0] pixel_index,
-    output [15:0] oled_data,
-    output [15:0] led
+    output [15:0] led,
+    output [6:0] seg
 );
 
     
-    // Clock divider for 6.25 MHz
-    reg [3:0] clk_divider = 0; // 4-bit counter for dividing 100 MHz to 6.25 MHz
+    wire [12:0] pixel_index;
+    wire frame_begin, sending_pixels, sample_pixel;
+    wire [15:0] oled_data;
+    wire reset;
+    wire enable;
     wire clk6p25m;
+    wire clk25m;
+    wire clk12p5m;
+    wire clk1hz;
     
     // Instantiate the MouseCtl module
     wire [11:0] xpos, ypos;   // Mouse X and Y position
@@ -32,29 +36,21 @@ module Top_Student (
     wire left, middle, right; // Mouse button signals
     wire new_event;           // Mouse event signal
     
+    flexible_clock clk6p25 (clk, 31'd7, clk6p25m);
+    flexible_clock clk25 (clk, 31'd1, clk25m);
+    flexible_clock clk12p5 (clk, 31'd3, clk12p5m);
+    flexible_clock clk1 (clk, 31'd50000000, clk1hz);
+    
     MouseCtl mouse (clk, reset, xpos, ypos, zpos, left, middle, right,
-        new_event, 12'd0, 1'b0, 1'b0, 1'b0, 1'b0, ps2_clk, ps2_data);
+            new_event, 12'd0, 1'b0, 1'b0, 1'b0, 1'b0, ps2_clk, ps2_data);
+            
+    assign reset = right;
+    assign enable = 1;
+    
+    paint painter (clk, clk25m, clk12p5m, clk6p25m, clk1hz,
+        left, reset, enable, xpos, ypos, pixel_index,
+        led, seg, oled_data);
         
-     assign led[15] = left;
-     assign led[14] = middle;
-     assign led[13] = right;
-    
-    // Instantiate 6.25MHz clk
-    always @(posedge clk or posedge reset) begin
-        if (reset)
-            clk_divider <= 0;
-        else
-            clk_divider <= clk_divider + 1;
-    end
-    
-    reg [15:0] bg_colour;
-    always @(posedge clk) begin
-        if (sw4)
-            bg_colour <= 16'hF800;
-        else
-            bg_colour <= 16'h07E0;
-    end
-    assign oled_data = bg_colour;
     
     Oled_Display OLED (clk6p25m, reset, frame_begin, sending_pixels,
       sample_pixel, pixel_index, oled_data, cs, sdin, sclk, d_cn, resn, vccen,
