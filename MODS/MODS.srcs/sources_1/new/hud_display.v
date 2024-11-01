@@ -87,8 +87,6 @@ module hud_display(
     always @ (*) begin
     oled_data = p1 | n1 | h1 | w1;
         
-    end
-     
-    
-        
+    end 
+
 endmodule

@@ -25,11 +25,12 @@ module game_timer(
     input clk1hz,
     input clk10hz,
     input reset,
+    input early_end,
     input start,
     input pause,
     output reg [6:0] seg,
-    output reg [3:0] an
-
+    output reg [3:0] an,
+    output reg game_end
     );
     
     
@@ -53,9 +54,10 @@ module game_timer(
         ones = 0;
         tens = 0;
         hundreds = 3;
+        game_end = 0;
     end
     always @(posedge clk10hz or posedge reset) begin
-        if (reset) begin
+        if (reset || early_end) begin
             current_digit <= 0;
         end else begin
             current_digit <= current_digit + 1;
@@ -70,8 +72,11 @@ module game_timer(
             ones <= 0;
             tens <= 0;
             hundreds <= 3;
-        end else if (start && !pause) begin
-            if (ones == 0) begin
+            game_end <= 0;
+        end else if (start && !pause && !game_end) begin
+            if (ones == 0 && tens == 0 && hundreds == 0) begin
+                game_end <= 1; // Set game_end to 1 when timer reaches 000
+            end else if (ones == 0) begin
                 if (tens == 0) begin
                     if (hundreds > 0) begin
                         ones <= 9;

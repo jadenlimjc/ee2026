@@ -24,48 +24,48 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/User/EE2026/MODS/MODS.cache/wt [current_project]
-set_property parent.project_path C:/Users/User/EE2026/MODS/MODS.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/User/EE2026/EE2026/MODS/MODS.cache/wt [current_project]
+set_property parent.project_path C:/Users/User/EE2026/EE2026/MODS/MODS.xpr [current_project]
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/User/EE2026/MODS/MODS.cache/ip [current_project]
+set_property ip_output_repo c:/Users/User/EE2026/EE2026/MODS/MODS.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/imports/res/weights.coe
-add_files C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/imports/res/00.coe
+add_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/res/weights.coe
+add_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/res/00.coe
 read_verilog -library xil_defaultlib {
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/CanvasTransfer.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/custom_clock.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/module_pack.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/neural_net.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/create_doughnut.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/button_press.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/count.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/task_c2.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/debouncer_a.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/count_a.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/hud_display.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/draw_P.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/draw_heart.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/draw_water.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/draw_flame.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/draw_number.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/draw_power.v
-  C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/CanvasTransfer.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/custom_clock.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/module_pack.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/neural_net.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/button_press.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/count.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/debouncer_a.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/count_a.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/hud_display.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_P.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_heart.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_number.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_power.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/menu_display.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/end_menu_display.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_winner.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/get_winner.v
 }
-read_ip -quiet C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter.xci
-set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter_ooc.xdc]
+read_ip -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter.xci
+set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter_ooc.xdc]
 
-read_ip -quiet C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0_ooc.xdc]
+read_ip -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0_ooc.xdc]
 
-read_ip -quiet C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci
-set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_ooc.xdc]
+read_ip -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci
+set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_ooc.xdc]
 
-read_ip -quiet C:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.xci
-set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_ooc.xdc]
+read_ip -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.xci
+set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -75,8 +75,8 @@ set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/M
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/User/EE2026/MODS/MODS.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/User/EE2026/MODS/MODS.srcs/constrs_1/new/constraints.xdc]
+read_xdc C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/constrs_1/new/constraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

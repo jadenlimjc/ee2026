@@ -25,34 +25,36 @@ module Top_Student (
     wire sample_pixel;
     wire clock_signal;
     wire frame_begin;
+    wire reset_game;
+    wire pause_game;
     
     parameter basys3_clk_freq = 100_000_000;
     parameter frame_rate = 12;
     
     wire [31:0] clk_param;
     
-    wire [15:0] pixel_data_menu;
+    wire [15:0] pixel_data_menu, pixel_data_hud, pixel_data_end, pixel_data_winner;
     
     wire clk_25M, clk_6p25M, clk_frameRate;
     
-    reg reset = 0;
-    
     assign clk_param = (basys3_clk_freq / (frame_rate)) - 1;
-    
-    wire [15:0] pixel_data_hud;
     
     //state definitions for what to display
     localparam [1:0] INTRO = 2'b00,
-                     HUD   = 2'b01;   
+                     HUD   = 2'b01,
+                     END   = 2'b10; 
     
     reg [1:0] display_settings = 2'b00;
+    wire [1:0] winner;
+    
     // state definition for player states
     // [1:0] corresponds to player no.
     // [3:2] corresponds to no. of lives.
     // [5:4] corresponds to powerups equipped
     
-    wire [5:0] player_state;
-            
+    wire [5:0] player1_state, player2_state, player3_state, player4_state;
+    wire game_start, game_end, game_running, early_end;
+    
     wire clksig6p25m, clksig1, clksig10;
     custom_clock clk6p25m (
         .clk(clk),
@@ -78,21 +80,22 @@ module Top_Student (
         .clock_signal(clk_frameRate)
     );
     
-    menu_display menu (
-        .clk(clk_frameRate),
-         .btnC(btnC),
-         .btnU(btnU), 
-         .btnL(btnL), 
-         .btnD(btnD), 
-         .pixel_index(pixel_index), 
-         .display_settings(display_settings),
-         .oled_data(pixel_data_menu)
-     );
+//    menu_display menu (
+//         .frame_rate(clk_frameRate),
+//         .btnC(btnC),
+//         .btnU(btnU), 
+//         .btnL(btnL), 
+//         .btnD(btnD), 
+//         .pixel_index(pixel_index), 
+//         .display_settings(display_settings),
+//         .oled_data(pixel_data_menu),
+//         .game_start(game_start)
+//     );
 
         
     hud_display hud (
         .clk(clksig6p25m),
-        .player_state(player_state),     
+        .player_state(player1_state),     
         .display_settings(display_settings),   
         .pixel_index(pixel_index),
         .oled_data(pixel_data_hud)
@@ -102,11 +105,37 @@ module Top_Student (
         .clk(clk),
         .clk1hz(clksig1),
         .clk10hz(clksig10),
-        .reset(sw[11]),
-        .start(sw[13]),
-        .pause(sw[12]),
+        .reset(reset_game),
+        .early_end(early_end),
+        .start(sw[8]),
+        .pause(pause_game),
         .seg(seg),
-        .an(an)
+        .an(an),
+        .game_end(game_end)
+    );
+    
+    end_menu_display end_menu (
+        .clk(clk),
+        .pixel_index(pixel_index),
+        .oled_data(pixel_data_end)
+    );
+    
+    get_winner winner_number(
+        .clk(clk),
+        .player1_state(player1_state),
+        .player2_state(player2_state),
+        .player3_state(player3_state),
+        .player4_state(player4_state),
+        .game_end(game_end),
+        .winner(winner),
+        .early_end(early_end)
+    );
+    
+    draw_winner player_no (
+        .clk(clk),
+        .winner(winner),
+        .pixel_index(pixel_index),
+        .colour(pixel_data_winner)
     );
         
     
@@ -127,14 +156,37 @@ module Top_Student (
         .pmoden(JB[7])
     );
     
-    assign player_state = sw[5:0];
+    
+    
+    assign player1_state = sw[5:0];
+    assign player2_state = 6'b000101;
+    assign player3_state = 6'b001010;
+    assign player4_state = 6'b001111;
+    assign reset_game = sw[13];
+    assign pause_game = sw[12];
+    
+    //game state manager
+    always @(posedge clk) begin
+        //detect button press and intro completion
+        //change to btnC instead of game_start temporarily 
+        if (display_settings == INTRO && btnC) begin       
+            display_settings <= HUD;
+        end else if (display_settings == HUD && game_end) begin
+            display_settings <= END;
+        end else if (display_settings == END && btnC) begin
+            display_settings <= INTRO;
+        end
+    end
 
-
+    //oled display manager based on game_state
     always @(posedge clk) begin
         if (display_settings == INTRO) begin
-            pixel_data <= pixel_data_menu;
+        //change to 0 instead of pixel_data_menu
+            pixel_data <= 16'h0000;
         end else if (display_settings == HUD) begin
             pixel_data <= pixel_data_hud;
+        end else if (display_settings == END) begin
+            pixel_data <= pixel_data_end | pixel_data_winner;
         end
      end
 
