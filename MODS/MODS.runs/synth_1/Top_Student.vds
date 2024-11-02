@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Nov  1 19:28:04 2024
-# Process ID: 15068
+# Start of session at: Sun Nov  3 01:18:22 2024
+# Process ID: 5736
 # Current directory: C:/Users/User/EE2026/EE2026/MODS/MODS.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/Users/User/EE2026/EE2026/MODS/MODS.runs/synth_1/Top_Student.vds
@@ -15,58 +15,217 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3216 
+INFO: Helper process launched with PID 3088 
+WARNING: [Synth 8-2490] overwriting previous definition of module Top_Student [C:/Users/User/EE2026/EE2026/MODS/MODS.runs/synth_1/.Xil/Vivado-5736-DESKTOP-HVL0GTD/realtime/Top_Student_stub.v:5]
+WARNING: [Synth 8-2490] overwriting previous definition of module Top_Student [C:/Users/User/EE2026/EE2026/MODS/MODS.runs/synth_1/.Xil/Vivado-5736-DESKTOP-HVL0GTD/realtime/Top_Student_stub.v:5]
+WARNING: [Synth 8-2490] overwriting previous definition of module Top_Student [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:14]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 396.480 ; gain = 109.828
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 401.188 ; gain = 115.371
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:14]
 	Parameter basys3_clk_freq bound to: 100000000 - type: integer 
 	Parameter frame_rate bound to: 12 - type: integer 
 	Parameter INTRO bound to: 2'b00 
-	Parameter HUD bound to: 2'b01 
+	Parameter GAME bound to: 2'b01 
 	Parameter END bound to: 2'b10 
+	Parameter WORD_LEN bound to: 80 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'custom_clock' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/custom_clock.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'custom_clock' (1#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/custom_clock.v:23]
-INFO: [Synth 8-6157] synthesizing module 'hud_display' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/hud_display.v:23]
-	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
-	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bkground' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/bkground.v:23]
+	Parameter SCREEN_Y bound to: 64 - type: integer 
+	Parameter SCREEN_X bound to: 96 - type: integer 
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+	Parameter MAP_HEIGHT_SIZE bound to: 200 - type: integer 
+	Parameter TANK_HITBOX bound to: 2 - type: integer 
+	Parameter WHITE bound to: 16'b1111111111111111 
 	Parameter BLACK bound to: 16'b0000000000000000 
-INFO: [Synth 8-6157] synthesizing module 'draw_P' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_P.v:23]
-	Parameter ORANGE bound to: 16'b1111110100000000 
-	Parameter YELLOW bound to: 16'b1111111111100000 
+	Parameter COLOUR_RED bound to: 16'b1111100000000000 
+	Parameter COLOUR_GREEN bound to: 16'b0000011111100000 
+	Parameter COLOUR_BLUE bound to: 16'b0000000000011111 
+	Parameter COLOUR_ORANGE bound to: 16'b1111101111100000 
+INFO: [Synth 8-6155] done synthesizing module 'bkground' (2#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/bkground.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'pixel_data' does not match port width (16) of module 'bkground' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:104]
+INFO: [Synth 8-6157] synthesizing module 'check_collisions' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/MODS_draft.xpr/MODS/MODS.srcs/sources_1/new/check_collisions.v:23]
+	Parameter SCREEN_Y bound to: 64 - type: integer 
+	Parameter SCREEN_X bound to: 96 - type: integer 
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+	Parameter MAP_HEIGHT_SIZE bound to: 200 - type: integer 
+	Parameter BORDER bound to: 15 - type: integer 
+	Parameter TANK_HITBOX bound to: 9 - type: integer 
+	Parameter BULLET_HITBOX bound to: 3 - type: integer 
+	Parameter WHITE bound to: 16'b1111111111111111 
 	Parameter BLACK bound to: 16'b0000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'draw_P' (2#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_P.v:23]
-INFO: [Synth 8-6157] synthesizing module 'draw_number' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_number.v:23]
-	Parameter ORANGE bound to: 16'b1111110100000000 
+	Parameter COLOUR_RED bound to: 16'b1111100000000000 
+	Parameter COLOUR_GREEN bound to: 16'b0000011111100000 
+	Parameter COLOUR_BLUE bound to: 16'b0000000000011111 
+	Parameter COLOUR_ORANGE bound to: 16'b1111101111100000 
+INFO: [Synth 8-6155] done synthesizing module 'check_collisions' (3#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/MODS_draft.xpr/MODS/MODS.srcs/sources_1/new/check_collisions.v:23]
+WARNING: [Synth 8-350] instance 'nolabel_line105' of module 'check_collisions' requires 5 connections, but only 4 given [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:105]
+INFO: [Synth 8-6157] synthesizing module 'move_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:23]
+	Parameter SCREEN_Y bound to: 64 - type: integer 
+	Parameter SCREEN_X bound to: 96 - type: integer 
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+	Parameter MAP_HEIGHT_SIZE bound to: 200 - type: integer 
+	Parameter BORDER bound to: 2 - type: integer 
+	Parameter WHITE bound to: 16'b1111111111111111 
 	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter COLOUR_RED bound to: 16'b1111100000000000 
+	Parameter COLOUR_GREEN bound to: 16'b0000011111100000 
+	Parameter COLOUR_BLUE bound to: 16'b0000000000011111 
+	Parameter COLOUR_ORANGE bound to: 16'b1111101111100000 
+INFO: [Synth 8-6155] done synthesizing module 'move_tank' (4#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:23]
+INFO: [Synth 8-6157] synthesizing module 'move_frame' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_frame.v:23]
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+	Parameter MAP_HEIGHT_SIZE bound to: 200 - type: integer 
+	Parameter SCREEN_Y bound to: 64 - type: integer 
+	Parameter SCREEN_X bound to: 96 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'move_frame' (5#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_frame.v:23]
+INFO: [Synth 8-6157] synthesizing module 'syncer' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/syncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'syncer' (6#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/syncer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'power_timer' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/power_timer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'power_timer' (7#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/power_timer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'is_power' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/is_power.v:23]
+	Parameter SCREEN_Y bound to: 64 - type: integer 
+	Parameter SCREEN_X bound to: 96 - type: integer 
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+	Parameter MAP_HEIGHT_SIZE bound to: 200 - type: integer 
+	Parameter TANK_HITBOX bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'is_power' (8#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/is_power.v:23]
+INFO: [Synth 8-6157] synthesizing module 'position_counter' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:2]
+	Parameter SCREEN_Y bound to: 64 - type: integer 
+	Parameter SCREEN_X bound to: 96 - type: integer 
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+	Parameter MAP_HEIGHT_SIZE bound to: 200 - type: integer 
+	Parameter TANK_HITBOX bound to: 9 - type: integer 
+	Parameter WHITE bound to: 16'b1111111111111111 
+	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter COLOUR_RED bound to: 16'b1111100000000000 
+	Parameter COLOUR_GREEN bound to: 16'b0000011111100000 
+	Parameter COLOUR_BLUE bound to: 16'b0000000000011111 
+	Parameter COLOUR_ORANGE bound to: 16'b1111101111100000 
+	Parameter MAX_PROJECTILES bound to: 3 - type: integer 
+	Parameter RIGHT bound to: 4'b0001 
+	Parameter LEFT bound to: 4'b0010 
+	Parameter UP bound to: 4'b1000 
+	Parameter DOWN bound to: 4'b0100 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:77]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:157]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:165]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:183]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:199]
+INFO: [Synth 8-6155] done synthesizing module 'position_counter' (9#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:2]
+INFO: [Synth 8-6157] synthesizing module 'is_hit' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v:23]
+	Parameter MAX_PROJECTILES bound to: 3 - type: integer 
+	Parameter xmin bound to: 0 - type: integer 
+	Parameter xmax bound to: 200 - type: integer 
+	Parameter ymin bound to: 0 - type: integer 
+	Parameter ymax bound to: 200 - type: integer 
+	Parameter TANK_HITBOX bound to: 9 - type: integer 
+	Parameter BULLET_HITBOX bound to: 3 - type: integer 
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'col0' should be on the sensitivity list [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v:68]
+WARNING: [Synth 8-567] referenced signal 'col1' should be on the sensitivity list [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v:68]
+WARNING: [Synth 8-567] referenced signal 'col2' should be on the sensitivity list [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v:68]
+WARNING: [Synth 8-567] referenced signal 'opp_tankx' should be on the sensitivity list [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v:68]
+WARNING: [Synth 8-567] referenced signal 'opp_tanky' should be on the sensitivity list [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'is_hit' (10#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'show_display' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:23]
+	Parameter SCREEN_Y bound to: 64 - type: integer 
+	Parameter SCREEN_X bound to: 96 - type: integer 
+	Parameter MAP_ROW_SIZE bound to: 200 - type: integer 
+	Parameter MAP_HEIGHT_SIZE bound to: 200 - type: integer 
+	Parameter TANK_HITBOX bound to: 9 - type: integer 
+	Parameter WHITE bound to: 6'b111111 
+	Parameter BLACK bound to: 6'b000000 
+	Parameter COLOUR_RED bound to: 6'b111000 
+	Parameter COLOUR_GREEN bound to: 6'b000111 
+	Parameter COLOUR_BLUE bound to: 6'b000000 
+	Parameter COLOUR_ORANGE bound to: 6'b111011 
+	Parameter COLOUR_GREY bound to: 6'b011011 
+	Parameter COLOUR_BEIGE bound to: 6'b111101 
+	Parameter MAX_PROJECTILES bound to: 3 - type: integer 
+	Parameter BORDER bound to: 15 - type: integer 
+	Parameter BULLET_HITBOX bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'draw_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_tank.v:23]
+	Parameter GREEN bound to: 6'b001100 
+	Parameter RED bound to: 6'b110000 
+	Parameter GRAY bound to: 6'b000101 
+	Parameter YELLOW bound to: 6'b111100 
+	Parameter BLUE bound to: 6'b000111 
+	Parameter BLACK bound to: 0 - type: integer 
+	Parameter BEIGE bound to: 6'b111110 
 	Parameter ONE bound to: 2'b00 
 	Parameter TWO bound to: 2'b01 
 	Parameter THREE bound to: 2'b10 
 	Parameter FOUR bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'draw_number' (3#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_number.v:23]
+	Parameter UP bound to: 2'b00 
+	Parameter LEFT bound to: 2'b01 
+	Parameter RIGHT bound to: 2'b10 
+	Parameter DOWN bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'draw_tank' (11#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_tank.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'ref_x' does not match port width (7) of module 'draw_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:104]
+WARNING: [Synth 8-689] width (8) of port connection 'ref_y' does not match port width (7) of module 'draw_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:105]
+WARNING: [Synth 8-689] width (4) of port connection 'tank_direction' does not match port width (2) of module 'draw_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:107]
+WARNING: [Synth 8-689] width (8) of port connection 'ref_x' does not match port width (7) of module 'draw_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:115]
+WARNING: [Synth 8-689] width (8) of port connection 'ref_y' does not match port width (7) of module 'draw_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:116]
+WARNING: [Synth 8-689] width (4) of port connection 'tank_direction' does not match port width (2) of module 'draw_tank' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:118]
+INFO: [Synth 8-6155] done synthesizing module 'show_display' (12#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_rx.v:29]
+	Parameter CLK_PER_BIT bound to: 868 - type: integer 
+	Parameter WORD_LEN bound to: 80 - type: integer 
+	Parameter s_IDLE bound to: 3'b000 
+	Parameter s_RX_START_BIT bound to: 3'b001 
+	Parameter s_RX_DATA_BIT bound to: 3'b010 
+	Parameter s_RX_STOP_BIT bound to: 3'b011 
+	Parameter s_CLEANUP bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (13#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_rx.v:29]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_tx.v:23]
+	Parameter CLK_PER_BIT bound to: 868 - type: integer 
+	Parameter WORD_LEN bound to: 80 - type: integer 
+	Parameter s_IDLE bound to: 3'b000 
+	Parameter s_TX_START_BIT bound to: 3'b001 
+	Parameter s_TX_DATA_BIT bound to: 3'b010 
+	Parameter s_TX_STOP_BIT bound to: 3'b011 
+	Parameter s_CLEANUP bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (14#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'hud_display' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/hud_display.v:23]
+	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
+	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
+	Parameter BLACK bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'draw_P' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_P.v:23]
+	Parameter ORANGE bound to: 6'b111000 
+	Parameter YELLOW bound to: 6'b111100 
+INFO: [Synth 8-6155] done synthesizing module 'draw_P' (15#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_P.v:23]
+INFO: [Synth 8-6157] synthesizing module 'draw_number' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_number.v:23]
+	Parameter ORANGE bound to: 6'b111000 
+	Parameter ONE bound to: 2'b00 
+	Parameter TWO bound to: 2'b01 
+	Parameter THREE bound to: 2'b10 
+	Parameter FOUR bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'draw_number' (16#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_number.v:23]
 INFO: [Synth 8-6157] synthesizing module 'draw_heart' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_heart.v:23]
-	Parameter RED bound to: 16'b1111100000000000 
-	Parameter WHITE bound to: 16'b1111111111111111 
-	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter RED bound to: 6'b110000 
+	Parameter WHITE bound to: 6'b111111 
 	Parameter ZERO bound to: 2'b00 
 	Parameter ONE bound to: 2'b01 
 	Parameter TWO bound to: 2'b10 
 	Parameter THREE bound to: 2'b11 
 	Parameter HEART_SPACING bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'draw_heart' (4#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_heart.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_heart.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'draw_heart' (17#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_heart.v:23]
 INFO: [Synth 8-6157] synthesizing module 'draw_power' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_power.v:23]
-	Parameter DARK_BLUE bound to: 16'b0000001000111010 
-	Parameter BLUE bound to: 16'b0100111010111111 
-	Parameter LIGHT_BLUE bound to: 16'b1011011101111111 
-	Parameter RED bound to: 16'b1111100000000000 
-	Parameter ORANGE bound to: 16'b1111110001001000 
-	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter DARK_BLUE bound to: 6'b000110 
+	Parameter BLUE bound to: 6'b001011 
+	Parameter LIGHT_BLUE bound to: 6'b101011 
+	Parameter RED bound to: 16'b0000000000110000 
+	Parameter ORANGE bound to: 16'b0000000000111000 
 	Parameter NONE bound to: 2'b00 
 	Parameter FIRE bound to: 2'b01 
 	Parameter WATER bound to: 2'b10 
 	Parameter FIREWATER bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'draw_power' (5#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_power.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'hud_display' (6#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/hud_display.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_power.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'draw_power' (18#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_power.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hud_display' (19#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/hud_display.v:23]
 INFO: [Synth 8-6157] synthesizing module 'game_timer' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:23]
 	Parameter ZERO bound to: 7'b1000000 
 	Parameter ONE bound to: 7'b1111001 
@@ -83,32 +242,33 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:122]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:137]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:105]
-INFO: [Synth 8-6155] done synthesizing module 'game_timer' (7#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'game_timer' (20#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:23]
 INFO: [Synth 8-6157] synthesizing module 'end_menu_display' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/end_menu_display.v:23]
-	Parameter WHITE bound to: 16'b1111111111111111 
-	Parameter GREEN bound to: 16'b0110010010101000 
-	Parameter YELLOW bound to: 16'b1110011011100100 
-	Parameter ORANGE bound to: 16'b1110001110000101 
-	Parameter DARK_ORANGE bound to: 16'b1100101010000000 
-	Parameter GRAY bound to: 16'b1000010000010000 
-INFO: [Synth 8-6155] done synthesizing module 'end_menu_display' (8#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/end_menu_display.v:23]
+	Parameter WHITE bound to: 6'b111111 
+	Parameter GREEN bound to: 6'b010100 
+	Parameter YELLOW bound to: 6'b111100 
+	Parameter ORANGE bound to: 6'b111000 
+	Parameter DARK_ORANGE bound to: 6'b101000 
+	Parameter GRAY bound to: 6'b000101 
+INFO: [Synth 8-6155] done synthesizing module 'end_menu_display' (21#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/end_menu_display.v:23]
 INFO: [Synth 8-6157] synthesizing module 'get_winner' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/get_winner.v:23]
 	Parameter ONE bound to: 2'b00 
 	Parameter TWO bound to: 2'b01 
 	Parameter THREE bound to: 2'b10 
 	Parameter FOUR bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'get_winner' (9#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/get_winner.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'get_winner' (22#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/get_winner.v:23]
 INFO: [Synth 8-6157] synthesizing module 'draw_winner' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_winner.v:23]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 	Parameter ONE bound to: 2'b00 
 	Parameter TWO bound to: 2'b01 
 	Parameter THREE bound to: 2'b10 
 	Parameter FOUR bound to: 2'b11 
-	Parameter YELLOW bound to: 16'b1110011011100100 
-	Parameter ORANGE bound to: 16'b1110001110000101 
+	Parameter ORANGE bound to: 6'b111000 
+	Parameter YELLOW bound to: 6'b111100 
 	Parameter BLACK bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'draw_winner' (10#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_winner.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'draw_winner' (23#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_winner.v:23]
+WARNING: [Synth 8-689] width (6) of port connection 'colour' does not match port width (16) of module 'draw_winner' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:325]
+INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
 	Parameter PixelCount bound to: 6144 - type: integer 
@@ -159,11 +319,19 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/User/EE2026/EE
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
-INFO: [Synth 8-226] default block is never used [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (11#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (12#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:14]
+INFO: [Synth 8-226] default block is never used [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
+INFO: [Synth 8-226] default block is never used [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (24#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+WARNING: [Synth 8-3848] Net clksig1k in module/entity Top_Student does not have driver. [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:43]
+WARNING: [Synth 8-3848] Net frame_req in module/entity Top_Student does not have driver. [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:102]
+WARNING: [Synth 8-3848] Net background in module/entity Top_Student does not have driver. [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:93]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (25#1) [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:14]
+WARNING: [Synth 8-3917] design Top_Student has port led[15] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[11] driven by constant 0
 WARNING: [Synth 8-3331] design draw_winner has unconnected port clk
 WARNING: [Synth 8-3331] design get_winner has unconnected port clk
 WARNING: [Synth 8-3331] design get_winner has unconnected port player1_state[5]
@@ -184,21 +352,89 @@ WARNING: [Synth 8-3331] design get_winner has unconnected port player4_state[1]
 WARNING: [Synth 8-3331] design get_winner has unconnected port player4_state[0]
 WARNING: [Synth 8-3331] design end_menu_display has unconnected port clk
 WARNING: [Synth 8-3331] design game_timer has unconnected port clk
-WARNING: [Synth 8-3331] design hud_display has unconnected port display_settings[1]
-WARNING: [Synth 8-3331] design hud_display has unconnected port display_settings[0]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[15]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[14]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[11]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[9]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[7]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[6]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnL
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnU
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnD
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[31]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[30]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[29]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[28]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[27]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[26]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[25]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[24]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[23]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[22]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[21]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[20]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[19]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[18]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[17]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[16]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[15]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[14]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[13]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[12]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[11]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[10]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[9]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[8]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[7]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[6]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[5]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[4]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[3]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[2]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[1]
+WARNING: [Synth 8-3331] design show_display has unconnected port next_tank_ptr[0]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[15]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[14]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[13]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[12]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[11]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[10]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[9]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[8]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[7]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[6]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[5]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[4]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[3]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[2]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[1]
+WARNING: [Synth 8-3331] design show_display has unconnected port background_img[0]
+WARNING: [Synth 8-3331] design show_display has unconnected port tank_dir[3]
+WARNING: [Synth 8-3331] design show_display has unconnected port tank_dir[2]
+WARNING: [Synth 8-3331] design show_display has unconnected port p2hit_wall[2]
+WARNING: [Synth 8-3331] design show_display has unconnected port p2hit_wall[1]
+WARNING: [Synth 8-3331] design show_display has unconnected port p2hit_tank[2]
+WARNING: [Synth 8-3331] design show_display has unconnected port p2hit_tank[1]
+WARNING: [Synth 8-3331] design position_counter has unconnected port CLOCK
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[31]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[30]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[29]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[28]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[27]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[26]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[25]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[24]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[23]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[22]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[21]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[20]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[19]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[18]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[17]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[16]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[15]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[14]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[13]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[12]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[11]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[10]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[9]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[8]
+WARNING: [Synth 8-3331] design move_frame has unconnected port tank_ptr[7]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 876.812 ; gain = 590.160
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 887.324 ; gain = 601.508
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -207,14 +443,19 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin nolabel_line105:clksig to constant 0 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:105]
+WARNING: [Synth 8-3295] tying undriven pin nolabel_line105:pass to constant 0 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:105]
+WARNING: [Synth 8-3295] tying undriven pin ispow:clksig to constant 0 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:157]
+WARNING: [Synth 8-3295] tying undriven pin ishit:clksig1k to constant 0 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:185]
+WARNING: [Synth 8-3295] tying undriven pin ishit2:clksig1k to constant 0 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v:194]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 876.812 ; gain = 590.160
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 887.324 ; gain = 601.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 876.812 ; gain = 590.160
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 887.324 ; gain = 601.508
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -232,31 +473,62 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 5048.352 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 5029.395 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:47 ; elapsed = 00:01:51 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Constraint Validation : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:47 ; elapsed = 00:01:51 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:01:51 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "rom" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:84]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:84]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_frame.v:63]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_frame.v:72]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:183]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:199]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:183]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v:199]
+INFO: [Synth 8-5544] ROM "nextx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nexty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nexty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nexty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nexty" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'r_sm_main_reg' in module 'uart_tx'
+INFO: [Synth 8-5544] ROM "o_tx_serial" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r_sm_main" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r_sm_main" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r_sm_main" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "seg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "oled_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "pixel_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_IDLE |                              000 |                              000
+          s_TX_START_BIT |                              001 |                              001
+           s_TX_DATA_BIT |                              010 |                              010
+           s_TX_STOP_BIT |                              011 |                              011
+               s_CLEANUP |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_sm_main_reg' using encoding 'sequential' in module 'uart_tx'
 WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:108]
 WARNING: [Synth 8-327] inferring latch for variable 'an_reg' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/game_timer.v:98]
 ---------------------------------------------------------------------------------------------------
@@ -297,74 +569,109 @@ WARNING: [Synth 8-327] inferring latch for variable 'an_reg' [C:/Users/User/EE20
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:52 ; elapsed = 00:01:56 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:52 ; elapsed = 00:01:56 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+------------------+------------+----------+
+|      |RTL Partition     |Replication |Instances |
++------+------------------+------------+----------+
+|1     |is_hit            |           2|      7799|
+|2     |Top_Student__GCB0 |           1|     18228|
+|3     |Top_Student__GCB1 |           1|      4224|
+|4     |Top_Student__GCB2 |           1|      9712|
+|5     |Top_Student__GCB3 |           1|     18511|
++------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 9     
+	   2 Input     32 Bit       Adders := 13    
+	   3 Input     32 Bit       Adders := 6     
 	   2 Input     17 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 81    
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 44    
+	   2 Input      8 Bit       Adders := 131   
+	   2 Input      7 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
 +---Registers : 
+	               80 Bit    Registers := 3     
 	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	               24 Bit    Registers := 2     
 	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 5     
-	                6 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 5     
+	                8 Bit    Registers := 15    
+	                6 Bit    Registers := 11    
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 9     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 27    
++---Multipliers : 
+	                32x32  Multipliers := 6     
 +---Muxes : 
+	   6 Input     80 Bit        Muxes := 1     
+	   2 Input     80 Bit        Muxes := 1     
 	   2 Input     40 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 4     
+	   6 Input     32 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 1     
 	  32 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 6     
+	   3 Input     24 Bit        Muxes := 3     
+	   4 Input     24 Bit        Muxes := 3     
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 1     
-	  12 Input     16 Bit        Muxes := 1     
-	   5 Input     16 Bit        Muxes := 6     
-	   2 Input     16 Bit        Muxes := 254   
-	   4 Input     16 Bit        Muxes := 4     
-	   8 Input     16 Bit        Muxes := 1     
-	   9 Input     16 Bit        Muxes := 2     
-	  17 Input     16 Bit        Muxes := 1     
-	  28 Input     16 Bit        Muxes := 1     
-	  11 Input     16 Bit        Muxes := 2     
-	   3 Input     16 Bit        Muxes := 11    
-	  10 Input     16 Bit        Muxes := 2     
-	   6 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 1     
-	   3 Input     10 Bit        Muxes := 2     
-	   2 Input      7 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 7     
+	   3 Input      8 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 15    
+	   2 Input      7 Bit        Muxes := 3     
 	   4 Input      7 Bit        Muxes := 1     
 	  14 Input      7 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 10    
+	   2 Input      6 Bit        Muxes := 271   
+	  12 Input      6 Bit        Muxes := 1     
+	   5 Input      6 Bit        Muxes := 3     
+	   8 Input      6 Bit        Muxes := 1     
+	   9 Input      6 Bit        Muxes := 1     
+	  17 Input      6 Bit        Muxes := 1     
+	  28 Input      6 Bit        Muxes := 1     
+	  11 Input      6 Bit        Muxes := 2     
+	   6 Input      6 Bit        Muxes := 1     
+	  10 Input      6 Bit        Muxes := 1     
 	  32 Input      6 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 2     
+	   3 Input      6 Bit        Muxes := 11    
+	   2 Input      5 Bit        Muxes := 10    
 	  32 Input      5 Bit        Muxes := 1     
+	  12 Input      5 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
 	   4 Input      4 Bit        Muxes := 1     
-	  10 Input      4 Bit        Muxes := 1     
-	   9 Input      4 Bit        Muxes := 1     
-	   6 Input      3 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 10    
-	   3 Input      2 Bit        Muxes := 6     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 15    
+	   2 Input      3 Bit        Muxes := 15    
+	   5 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 11    
+	   3 Input      2 Bit        Muxes := 5     
+	   5 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 4     
+	   8 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 71    
+	   4 Input      1 Bit        Muxes := 13    
+	   3 Input      1 Bit        Muxes := 7     
+	  10 Input      1 Bit        Muxes := 2     
 	  11 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
 	  14 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -375,14 +682,213 @@ Hierarchical RTL Component report
 Module Top_Student 
 Detailed RTL Component Info : 
 +---Registers : 
+	               80 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
-	   3 Input      1 Bit        Muxes := 1     
-Module custom_clock 
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 2     
+Module check_collisions__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module check_collisions__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module check_collisions__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module is_hit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 8     
+Module uart_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	               80 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   6 Input     80 Bit        Muxes := 1     
+	   2 Input     80 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   6 Input     32 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 3     
+Module uart_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	               80 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 8     
+Module draw_tank__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 16    
++---Registers : 
+	                6 Bit    Registers := 2     
++---Muxes : 
+	   4 Input      6 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 12    
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 1     
+Module draw_tank 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 16    
++---Registers : 
+	                6 Bit    Registers := 2     
++---Muxes : 
+	   4 Input      6 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 12    
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 1     
+Module show_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 6     
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 10    
+	   2 Input      8 Bit       Adders := 2     
++---Multipliers : 
+	                32x32  Multipliers := 6     
+Module position_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 10    
++---Registers : 
+	               24 Bit    Registers := 2     
+	                8 Bit    Registers := 6     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 6     
+	   3 Input     24 Bit        Muxes := 3     
+	   4 Input     24 Bit        Muxes := 3     
+	   3 Input      8 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 11    
+	   5 Input      8 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 15    
+	   4 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 5     
+	  10 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 4     
+Module bkground 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+Module syncer 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+Module move_tank 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 1     
+Module move_frame 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module check_collisions 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module power_timer__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module power_timer 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module is_power 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                2 Bit    Registers := 1     
+Module custom_clock__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module custom_clock__2 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -394,44 +900,46 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 13    
 +---Registers : 
-	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
 +---Muxes : 
-	  12 Input     16 Bit        Muxes := 1     
+	  12 Input      6 Bit        Muxes := 1     
 Module draw_number 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 15    
 +---Registers : 
-	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
 +---Muxes : 
-	   5 Input     16 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 4     
-	   4 Input     16 Bit        Muxes := 1     
-	   8 Input     16 Bit        Muxes := 1     
+	   5 Input      6 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 4     
+	   4 Input      6 Bit        Muxes := 1     
+	   8 Input      6 Bit        Muxes := 1     
 Module draw_heart 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 26    
 +---Registers : 
-	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
 +---Muxes : 
-	   9 Input     16 Bit        Muxes := 1     
-	  17 Input     16 Bit        Muxes := 1     
-	  28 Input     16 Bit        Muxes := 1     
+	   9 Input      6 Bit        Muxes := 1     
+	  17 Input      6 Bit        Muxes := 1     
+	  28 Input      6 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
 Module draw_power 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 27    
 +---Registers : 
-	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 52    
-	  11 Input     16 Bit        Muxes := 1     
-	   4 Input     16 Bit        Muxes := 1     
-	   3 Input     10 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 52    
+	  11 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
 Module game_timer 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -452,23 +960,12 @@ Detailed RTL Component Info :
 	  11 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 2     
 	  14 Input      1 Bit        Muxes := 1     
-Module end_menu_display 
+Module custom_clock__3 
 Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 193   
-	   3 Input     16 Bit        Muxes := 11    
-	  10 Input     16 Bit        Muxes := 1     
-	   6 Input     16 Bit        Muxes := 1     
-	   4 Input     16 Bit        Muxes := 2     
-	   5 Input     16 Bit        Muxes := 4     
-	   9 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	  10 Input      4 Bit        Muxes := 1     
-	   9 Input      4 Bit        Muxes := 1     
-	   6 Input      3 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 3     
-	   3 Input      2 Bit        Muxes := 5     
-	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module get_winner 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -476,10 +973,10 @@ Detailed RTL Component Info :
 Module draw_winner 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   6 Input     16 Bit        Muxes := 1     
-	  10 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 4     
-	  11 Input     16 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	  10 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	  11 Input      6 Bit        Muxes := 1     
 Module Oled_Display 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -500,6 +997,31 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 2     
 	  32 Input      5 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
+Module end_menu_display 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 185   
+	   3 Input      6 Bit        Muxes := 11    
+	   4 Input      6 Bit        Muxes := 4     
+	   5 Input      6 Bit        Muxes := 1     
+	  12 Input      5 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 3     
+	   8 Input      2 Bit        Muxes := 1     
+Module custom_clock__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module custom_clock 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -516,126 +1038,385 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "clksig10hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clksig1hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element clkframeRate/clock_signal_reg was removed.  [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/custom_clock.v:30]
 INFO: [Synth 8-5544] ROM "pixel_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5545] ROM "clk6p25m/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "clksig1hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:172]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:171]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:164]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:163]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:156]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v:155]
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: Generating DSP pixel_data4, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+DSP Report: operator pixel_data4 is absorbed into DSP pixel_data4.
+INFO: [Synth 8-4471] merging register 'next_tank_y_reg[7:0]' into 'next_tank_y_reg[7:0]' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:64]
+INFO: [Synth 8-4471] merging register 'next_tank_x_reg[7:0]' into 'next_tank_x_reg[7:0]' [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:63]
+WARNING: [Synth 8-6014] Unused sequential element next_tank_y_reg was removed.  [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:64]
+WARNING: [Synth 8-6014] Unused sequential element next_tank_x_reg was removed.  [C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v:63]
+INFO: [Synth 8-5545] ROM "clksig20hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clksig10hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "oled_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "clksig1hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "oled/fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "oled/fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "clk6p25m/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "clksig1hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "clksig10hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "oled/fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "oled/fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "clk6p25m/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "clksig1hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "clksig10hz/clock_signal0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "oled/delay" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "oled/fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-3917] design Top_Student has port JB[7] driven by constant 1
-WARNING: [Synth 8-3331] design end_menu_display has unconnected port clk
-WARNING: [Synth 8-3331] design hud_display has unconnected port display_settings[1]
-WARNING: [Synth 8-3331] design hud_display has unconnected port display_settings[0]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[15]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[14]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[11]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[9]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[7]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[6]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnL
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnU
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnD
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[0]' (FD) to 'hud/player/colour_reg[1]'
-INFO: [Synth 8-3886] merging instance 'hud/power/colour_reg[0]' (FD) to 'hud/power/colour_reg[2]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[0]' (FD) to 'hud/heart/colour_reg[1]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[0]' (FD) to 'hud/number/colour_reg[1]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[1]' (FD) to 'hud/player/colour_reg[2]'
-INFO: [Synth 8-3886] merging instance 'hud/power/colour_reg[1]' (FD) to 'hud/power/colour_reg[4]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[1]' (FD) to 'hud/heart/colour_reg[2]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[1]' (FD) to 'hud/number/colour_reg[2]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[2]' (FD) to 'hud/player/colour_reg[3]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[2]' (FD) to 'hud/heart/colour_reg[3]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[2]' (FD) to 'hud/number/colour_reg[3]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[3]' (FD) to 'hud/player/colour_reg[4]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[3]' (FD) to 'hud/heart/colour_reg[4]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[3]' (FD) to 'hud/number/colour_reg[4]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (hud/player/\colour_reg[4] )
-INFO: [Synth 8-3886] merging instance 'hud/power/colour_reg[4]' (FD) to 'hud/power/colour_reg[5]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[4]' (FD) to 'hud/heart/colour_reg[5]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[4]' (FD) to 'hud/number/colour_reg[5]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[5]' (FD) to 'hud/player/colour_reg[6]'
-INFO: [Synth 8-3886] merging instance 'hud/power/colour_reg[5]' (FD) to 'hud/power/colour_reg[9]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[5]' (FD) to 'hud/heart/colour_reg[6]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[5]' (FD) to 'hud/number/colour_reg[6]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[6]' (FD) to 'hud/player/colour_reg[7]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[6]' (FD) to 'hud/heart/colour_reg[7]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[6]' (FD) to 'hud/number/colour_reg[7]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[7]' (FD) to 'hud/player/colour_reg[9]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[7]' (FD) to 'hud/heart/colour_reg[8]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[7]' (FD) to 'hud/number/colour_reg[9]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[8]' (FD) to 'hud/player/colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[8]' (FD) to 'hud/heart/colour_reg[9]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[8]' (FD) to 'hud/number/colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[9]' (FD) to 'hud/heart/colour_reg[10]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (hud/number/\colour_reg[9] )
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[10]' (FD) to 'hud/player/colour_reg[11]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[10]' (FD) to 'hud/number/colour_reg[11]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[11]' (FD) to 'hud/player/colour_reg[12]'
-INFO: [Synth 8-3886] merging instance 'hud/power/colour_reg[11]' (FD) to 'hud/power/colour_reg[14]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[11]' (FD) to 'hud/heart/colour_reg[12]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[11]' (FD) to 'hud/number/colour_reg[12]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[12]' (FD) to 'hud/player/colour_reg[13]'
-INFO: [Synth 8-3886] merging instance 'hud/power/colour_reg[12]' (FD) to 'hud/power/colour_reg[13]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[12]' (FD) to 'hud/heart/colour_reg[13]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[12]' (FD) to 'hud/number/colour_reg[13]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[13]' (FD) to 'hud/player/colour_reg[14]'
-INFO: [Synth 8-3886] merging instance 'hud/power/colour_reg[13]' (FD) to 'hud/power/colour_reg[15]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[13]' (FD) to 'hud/heart/colour_reg[14]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[13]' (FD) to 'hud/number/colour_reg[14]'
-INFO: [Synth 8-3886] merging instance 'hud/player/colour_reg[14]' (FD) to 'hud/player/colour_reg[15]'
-INFO: [Synth 8-3886] merging instance 'hud/heart/colour_reg[14]' (FD) to 'hud/heart/colour_reg[15]'
-INFO: [Synth 8-3886] merging instance 'hud/number/colour_reg[14]' (FD) to 'hud/number/colour_reg[15]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\timer/an_reg[3] )
-WARNING: [Synth 8-3332] Sequential element (colour_reg[4]) is unused and will be removed from module draw_P.
-WARNING: [Synth 8-3332] Sequential element (colour_reg[9]) is unused and will be removed from module draw_number.
-WARNING: [Synth 8-3332] Sequential element (timer/an_reg[3]) is unused and will be removed from module Top_Student.
-WARNING: [Synth 8-3332] Sequential element (timer/tens_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3917] design Top_Student has port led[15] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design Top_Student has port led[11] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[31]' (FDE) to 'i_0/tx_byte_1_reg[30]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[30]' (FDE) to 'i_0/tx_byte_1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[29]' (FDE) to 'i_0/tx_byte_1_reg[28]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[28]' (FDE) to 'i_0/tx_byte_1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[27]' (FDE) to 'i_0/tx_byte_1_reg[26]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[26]' (FDE) to 'i_0/tx_byte_1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[25]' (FDE) to 'i_0/tx_byte_1_reg[24]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[24]' (FDE) to 'i_0/tx_byte_1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[23]' (FDE) to 'i_0/tx_byte_1_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[22]' (FDE) to 'i_0/tx_byte_1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[21]' (FDE) to 'i_0/tx_byte_1_reg[20]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[20]' (FDE) to 'i_0/tx_byte_1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[19]' (FDE) to 'i_0/tx_byte_1_reg[18]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[18]' (FDE) to 'i_0/tx_byte_1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_byte_1_reg[17]' (FDE) to 'i_0/tx_byte_1_reg[16]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\tx_byte_1_reg[16] )
+INFO: [Synth 8-3886] merging instance 'i_0/movetank/tank_x_reg[1]' (FDE) to 'i_0/movetank/tank_ptr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/movetank/tank_x_reg[2]' (FDE) to 'i_0/movetank/tank_ptr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank2/tank_colour_reg[0]' (FD) to 'i_0/show_dis/tank2/tank_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank1/tank_colour_reg[0]' (FD) to 'i_0/show_dis/tank1/tank_colour_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank2/tank_colour_reg[1]' (FD) to 'i_0/show_dis/tank2/tank_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank1/tank_colour_reg[1]' (FD) to 'i_0/show_dis/tank1/tank_colour_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank2/tank_colour_reg[2]' (FD) to 'i_0/show_dis/tank2/tank_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank1/tank_colour_reg[2]' (FD) to 'i_0/show_dis/tank1/tank_colour_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/show_dis/tank2/\tank_colour_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/show_dis/tank1/\tank_colour_reg[3] )
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank2/tank_colour_reg[4]' (FD) to 'i_0/show_dis/tank2/tank_colour_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank1/tank_colour_reg[4]' (FD) to 'i_0/show_dis/tank1/tank_colour_reg[5]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/show_dis/tank2/\tank_colour_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/show_dis/tank1/\tank_colour_reg[5] )
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[16]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[17]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[18]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[19]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[20]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[25]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[21]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[26]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[22]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[27]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[30]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[23]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[28]' (FD) to 'i_0/sync/sync_tankptr_reg[31]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[31]' (FD) to 'i_0/sync/sync_tankptr_reg[29]'
+INFO: [Synth 8-3886] merging instance 'i_0/sync/sync_tankptr_reg[29]' (FD) to 'i_0/sync/sync_tankptr_reg[24]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\sync/sync_tankptr_reg[24] )
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[31]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[30]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[29]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[28]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[27]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[26]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[25]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[24]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[23]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[22]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[21]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[20]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[19]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[18]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/tx_1/r_tx_data_reg[17]' (FDE) to 'i_0/tx_1/r_tx_data_reg[16]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/tx_1/\r_tx_data_reg[16] )
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank2/colour_reg[0]' (FDE) to 'i_0/show_dis/tank2/colour_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank2/colour_reg[1]' (FDE) to 'i_0/show_dis/tank2/colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank1/colour_reg[1]' (FDE) to 'i_0/show_dis/tank1/colour_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/show_dis/tank2/\colour_reg[3] )
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank2/colour_reg[4]' (FDE) to 'i_0/show_dis/tank2/colour_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/show_dis/tank1/colour_reg[4]' (FDE) to 'i_0/show_dis/tank1/colour_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/show_dis/tank1/\colour_reg[5] )
+WARNING: [Synth 8-3332] Sequential element (r_rx_dv_reg) is unused and will be removed from module uart_rx.
+WARNING: [Synth 8-3332] Sequential element (r_tx_data_reg[16]) is unused and will be removed from module uart_tx.
+WARNING: [Synth 8-3332] Sequential element (r_tx_done_reg) is unused and will be removed from module uart_tx.
+WARNING: [Synth 8-3332] Sequential element (tank_colour_reg[5]) is unused and will be removed from module draw_tank__1.
+WARNING: [Synth 8-3332] Sequential element (tank_colour_reg[3]) is unused and will be removed from module draw_tank__1.
+WARNING: [Synth 8-3332] Sequential element (colour_reg[5]) is unused and will be removed from module draw_tank__1.
+WARNING: [Synth 8-3332] Sequential element (tank_colour_reg[5]) is unused and will be removed from module draw_tank.
+WARNING: [Synth 8-3332] Sequential element (tank_colour_reg[3]) is unused and will be removed from module draw_tank.
+WARNING: [Synth 8-3332] Sequential element (colour_reg[3]) is unused and will be removed from module draw_tank.
+WARNING: [Synth 8-3332] Sequential element (led_reg[2]) is unused and will be removed from module position_counter.
+WARNING: [Synth 8-3332] Sequential element (led_reg[1]) is unused and will be removed from module position_counter.
+WARNING: [Synth 8-3332] Sequential element (led_reg[0]) is unused and will be removed from module position_counter.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[15]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[14]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[13]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[12]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[11]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[10]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[9]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[8]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[7]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[6]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[5]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[4]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[3]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[2]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[1]) is unused and will be removed from module bkground.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[0]) is unused and will be removed from module bkground.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_2/\timer/an_reg[3] )
+INFO: [Synth 8-3886] merging instance 'i_2/hud/heart/colour_reg[0]' (FDE) to 'i_2/hud/heart/colour_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/heart/colour_reg[1]' (FDE) to 'i_2/hud/heart/colour_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/heart/colour_reg[2]' (FDE) to 'i_2/hud/heart/colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/heart/colour_reg[5]' (FDE) to 'i_2/hud/heart/colour_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/number/colour_reg[0]' (FD) to 'i_2/hud/number/colour_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/number/colour_reg[1]' (FD) to 'i_2/hud/number/colour_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/hud/number/\colour_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_2/hud/number/colour_reg[3]' (FD) to 'i_2/hud/number/colour_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/number/colour_reg[5]' (FD) to 'i_2/hud/number/colour_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/player/colour_reg[0]' (FD) to 'i_2/hud/player/colour_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/hud/player/\colour_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_2/hud/player/colour_reg[3]' (FD) to 'i_2/hud/player/colour_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/hud/player/colour_reg[5]' (FD) to 'i_2/hud/player/colour_reg[4]'
+WARNING: [Synth 8-3332] Sequential element (colour_reg[1]) is unused and will be removed from module draw_P.
+WARNING: [Synth 8-3332] Sequential element (colour_reg[2]) is unused and will be removed from module draw_number.
+INFO: [Synth 8-3886] merging instance 'i_0/movetank/tank_x_reg[0]' (FDE) to 'i_0/movetank/tank_ptr_reg[0]'
+WARNING: [Synth 8-3332] Sequential element (collisions_reg) is unused and will be removed from module check_collisions__5.
+WARNING: [Synth 8-3332] Sequential element (collisions_reg) is unused and will be removed from module check_collisions__4.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:02:58 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:35 ; elapsed = 00:04:41 . Memory (MB): peak = 5029.395 ; gain = 4743.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|show_display | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|show_display | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+------------------+------------+----------+
+|      |RTL Partition     |Replication |Instances |
++------+------------------+------------+----------+
+|1     |is_hit            |           1|      7661|
+|2     |Top_Student__GCB0 |           1|     13256|
+|3     |Top_Student__GCB1 |           1|      3701|
+|4     |Top_Student__GCB2 |           1|      1249|
+|5     |Top_Student__GCB3 |           1|      2890|
+|6     |is_hit__1         |           1|      3538|
++------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:00 ; elapsed = 00:03:06 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:47 ; elapsed = 00:04:54 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+info: optimization accepted worst group hill climbing move (-7334.0/oG. 5.0ps)
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:01 ; elapsed = 00:03:07 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Timing Optimization : Time (s): cpu = 00:05:15 ; elapsed = 00:05:22 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+------------------+------------+----------+
+|      |RTL Partition     |Replication |Instances |
++------+------------------+------------+----------+
+|1     |is_hit            |           1|      7661|
+|2     |Top_Student__GCB1 |           1|      3701|
+|3     |is_hit__1         |           1|      3538|
+|4     |Top_Student_GT0   |           1|     17306|
++------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (c0/collisions_reg) is unused and will be removed from module is_hit.
+WARNING: [Synth 8-3332] Sequential element (c1/collisions_reg) is unused and will be removed from module is_hit.
+WARNING: [Synth 8-3332] Sequential element (c2/collisions_reg) is unused and will be removed from module is_hit.
+WARNING: [Synth 8-3332] Sequential element (c0/collisions_reg) is unused and will be removed from module is_hit__1.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movetank/frame_dir_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movetank/frame_dir_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movetank/frame_dir_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movetank/frame_dir_reg[2] )
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[79]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[78]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[77]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[76]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[75]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[74]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[73]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[72]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[71]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[70]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[69]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[68]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[67]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[66]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[65]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[64]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[55]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[54]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[53]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[52]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[51]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[50]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[49]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[48]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[47]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[46]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[45]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[44]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[43]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[42]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[41]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[40]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (poscnt/shootdir_reg[0][2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (poscnt/shootdir_reg[0][1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (poscnt/shootdir_reg[1][2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (poscnt/shootdir_reg[1][0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (poscnt/shootdir_reg[2][2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (poscnt/shootdir_reg[2][0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/updated_reg) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/frame_dir_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/frame_dir_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/frame_dir_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/frame_dir_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (sync/sync_dir_reg[2]) is unused and will be removed from module Top_Student.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_y_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_y_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_y_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_x_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_x_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_x_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_y_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_y_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_y_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frameptr_x_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\movef/frame_ptr_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (movef/frame_ptr_reg[0]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[63]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[62]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[61]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[60]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[59]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[58]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[57]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[56]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[39]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[38]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[37]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[36]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[35]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[34]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[33]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (rx_1/r_rx_byte_reg[32]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/next_tank_ptr_reg[15]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/next_tank_ptr_reg[14]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (movetank/next_tank_ptr_reg[13]) is unused and will be removed from module Top_Student.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:02 ; elapsed = 00:03:08 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Technology Mapping : Time (s): cpu = 00:05:20 ; elapsed = 00:05:27 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -659,7 +1440,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished IO Insertion : Time (s): cpu = 00:05:21 ; elapsed = 00:05:28 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -672,7 +1453,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:21 ; elapsed = 00:05:28 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -684,25 +1465,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:21 ; elapsed = 00:05:29 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:22 ; elapsed = 00:05:29 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:22 ; elapsed = 00:05:29 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:22 ; elapsed = 00:05:29 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -718,53 +1499,66 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |   151|
-|3     |LUT1   |   143|
-|4     |LUT2   |   400|
-|5     |LUT3   |   148|
-|6     |LUT4   |   196|
-|7     |LUT5   |   319|
-|8     |LUT6   |  1783|
-|9     |MUXF7  |   367|
-|10    |MUXF8  |    50|
+|1     |BUFG   |     3|
+|2     |CARRY4 |   785|
+|3     |LUT1   |   278|
+|4     |LUT2   |  1171|
+|5     |LUT3   |   987|
+|6     |LUT4   |  1242|
+|7     |LUT5   |   725|
+|8     |LUT6   |  1693|
+|9     |MUXF7  |   101|
+|10    |MUXF8  |    34|
 |11    |FDCE   |    12|
 |12    |FDE_1  |    32|
 |13    |FDPE   |     2|
-|14    |FDRE   |   216|
-|15    |LD     |    10|
-|16    |IBUF   |    11|
-|17    |OBUF   |    18|
-|18    |OBUFT  |     1|
+|14    |FDRE   |   715|
+|15    |FDSE   |    31|
+|16    |LD     |    10|
+|17    |IBUF   |    11|
+|18    |OBUF   |    27|
+|19    |OBUFT  |     9|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+-------------+---------------+------+
-|      |Instance     |Module         |Cells |
-+------+-------------+---------------+------+
-|1     |top          |               |  3861|
-|2     |  clk6p25m   |custom_clock   |    52|
-|3     |  clksig10hz |custom_clock_0 |    53|
-|4     |  clksig1hz  |custom_clock_1 |    55|
-|5     |  hud        |hud_display    |   149|
-|6     |    heart    |draw_heart     |     3|
-|7     |    number   |draw_number    |    27|
-|8     |    player   |draw_P         |    34|
-|9     |    power    |draw_power     |    81|
-|10    |  oled       |Oled_Display   |  3334|
-|11    |  player_no  |draw_winner    |    88|
-|12    |  timer      |game_timer     |    75|
-+------+-------------+---------------+------+
++------+-------------+-----------------+------+
+|      |Instance     |Module           |Cells |
++------+-------------+-----------------+------+
+|1     |top          |                 |  7868|
+|2     |  clk6p25m   |custom_clock     |    56|
+|3     |  clksig10hz |custom_clock_0   |    55|
+|4     |  clksig1hz  |custom_clock_1   |    54|
+|5     |  clksig20hz |custom_clock_2   |    55|
+|6     |  hud        |hud_display      |   274|
+|7     |    heart    |draw_heart       |    10|
+|8     |    number   |draw_number      |    26|
+|9     |    player   |draw_P           |    79|
+|10    |    power    |draw_power       |   159|
+|11    |  ispow      |is_power         |   388|
+|12    |  movef      |move_frame       |   792|
+|13    |  movetank   |move_tank        |   758|
+|14    |  oled       |Oled_Display     |  2188|
+|15    |  player_no  |draw_winner      |    56|
+|16    |  poscnt     |position_counter |   349|
+|17    |  powtime    |power_timer      |    50|
+|18    |  powtime1   |power_timer_3    |    50|
+|19    |  rx_1       |uart_rx          |   620|
+|20    |  show_dis   |show_display     |   791|
+|21    |    tank1    |draw_tank        |   145|
+|22    |    tank2    |draw_tank_4      |   396|
+|23    |  sync       |syncer           |   498|
+|24    |  timer      |game_timer       |    74|
+|25    |  tx_1       |uart_tx          |   152|
++------+-------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:03 ; elapsed = 00:03:09 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:22 ; elapsed = 00:05:29 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:19 ; elapsed = 00:01:29 . Memory (MB): peak = 5048.352 ; gain = 590.160
-Synthesis Optimization Complete : Time (s): cpu = 00:03:03 ; elapsed = 00:03:10 . Memory (MB): peak = 5048.352 ; gain = 4761.699
+Synthesis finished with 0 errors, 0 critical warnings and 144 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:39 ; elapsed = 00:03:50 . Memory (MB): peak = 5029.395 ; gain = 601.508
+Synthesis Optimization Complete : Time (s): cpu = 00:05:22 ; elapsed = 00:05:29 . Memory (MB): peak = 5029.395 ; gain = 4743.578
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 621 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 973 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'Top_Student' is not ideal for floorplanning, since the cellview 'Oled_Display' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -773,11 +1567,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE: 10 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-120 Infos, 57 Warnings, 0 Critical Warnings and 0 Errors encountered.
+226 Infos, 241 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:05 ; elapsed = 00:03:12 . Memory (MB): peak = 5048.352 ; gain = 4773.172
+synth_design: Time (s): cpu = 00:05:24 ; elapsed = 00:05:33 . Memory (MB): peak = 5029.395 ; gain = 4755.078
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/User/EE2026/EE2026/MODS/MODS.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 5048.352 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Nov  1 19:31:22 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 5029.395 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  3 01:24:01 2024...

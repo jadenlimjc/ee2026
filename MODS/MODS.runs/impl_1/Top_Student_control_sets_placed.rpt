@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Nov  1 20:05:16 2024
+| Date         : Sun Nov  3 01:25:20 2024
 | Host         : DESKTOP-HVL0GTD running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
 | Design       : Top_Student
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    17 |
-| Unused register locations in slices containing registers |    32 |
+| Number of unique control sets                            |    37 |
+| Unused register locations in slices containing registers |    66 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,12 +34,13 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      4 |            2 |
+|      2 |            1 |
+|      4 |            5 |
 |      6 |            1 |
-|      8 |            3 |
-|     10 |            1 |
-|     14 |            1 |
-|    16+ |            9 |
+|      8 |            4 |
+|     12 |            2 |
+|     14 |            2 |
+|    16+ |           22 |
 +--------+--------------+
 
 
@@ -49,38 +50,58 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              62 |           18 |
-| No           | No                    | Yes                    |              12 |            3 |
-| No           | Yes                   | No                     |             318 |           47 |
-| Yes          | No                    | No                     |             104 |           14 |
-| Yes          | No                    | Yes                    |              16 |            4 |
-| Yes          | Yes                   | No                     |              32 |            6 |
+| No           | No                    | No                     |             258 |           77 |
+| No           | No                    | Yes                    |              12 |            4 |
+| No           | Yes                   | No                     |             378 |           52 |
+| Yes          | No                    | No                     |             670 |          110 |
+| Yes          | No                    | Yes                    |              16 |            3 |
+| Yes          | Yes                   | No                     |             104 |           21 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------------------+-----------------------------------+----------------------------------+------------------+----------------+
-|           Clock Signal           |           Enable Signal           |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
-+----------------------------------+-----------------------------------+----------------------------------+------------------+----------------+
-|  clksig10hz/current_digit_reg[0] |                                   | sw_IBUF[13]                      |                1 |              4 |
-| ~clksig6p25m_BUFG                |                                   |                                  |                2 |              4 |
-|  timer/an_reg[2]_i_2_n_0         |                                   |                                  |                1 |              6 |
-|  clksig1hz/hundreds_reg[3]       |                                   | sw_IBUF[13]                      |                2 |              8 |
-|  clksig1hz/hundreds_reg[3]       | timer/ones                        | sw_IBUF[13]                      |                2 |              8 |
-|  clksig1hz/hundreds_reg[3]       | timer/hundreds                    | sw_IBUF[13]                      |                2 |              8 |
-|  clk_IBUF_BUFG                   |                                   |                                  |                4 |             10 |
-|  timer/seg_reg[6]_i_2_n_0        |                                   |                                  |                4 |             14 |
-|  clksig6p25m_BUFG                |                                   |                                  |                7 |             28 |
-|  clk_IBUF_BUFG                   | pixel_data                        | pixel_data[15]_i_1_n_0           |                6 |             32 |
-| ~clksig6p25m_BUFG                |                                   | oled/frame_counter[16]_i_1_n_0   |                5 |             36 |
-| ~clksig6p25m_BUFG                | oled/delay[0]_i_1_n_0             |                                  |                5 |             40 |
-| ~clksig6p25m_BUFG                | oled/FSM_onehot_state[31]_i_1_n_0 |                                  |                9 |             64 |
-|  clk_IBUF_BUFG                   |                                   | clk6p25m/clear                   |                8 |             64 |
-|  clk_IBUF_BUFG                   |                                   | clksig10hz/counter[0]_i_1__0_n_0 |                8 |             64 |
-|  clk_IBUF_BUFG                   |                                   | clksig1hz/counter[0]_i_1_n_0     |                8 |             64 |
-| ~clksig6p25m_BUFG                |                                   | oled/spi_word[39]_i_1_n_0        |               18 |             90 |
-+----------------------------------+-----------------------------------+----------------------------------+------------------+----------------+
++---------------------------+-----------------------------------+---------------------------------+------------------+----------------+
+|        Clock Signal       |           Enable Signal           |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++---------------------------+-----------------------------------+---------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG            | tx_1/r_clock_count[8]_i_2_n_0     |                                 |                1 |              2 |
+|  clksig10hz/CLK           |                                   | sw_IBUF[13]                     |                1 |              4 |
+|  clksig20_BUFG            | poscnt/shootdir[2][3]_i_1_n_0     |                                 |                2 |              4 |
+|  clksig20_BUFG            | poscnt/shootdir[0][3]_i_1_n_0     |                                 |                1 |              4 |
+| ~clksig6p25m_BUFG         |                                   |                                 |                2 |              4 |
+|  clksig20_BUFG            | poscnt/shootdir[1][3]_i_1_n_0     |                                 |                1 |              4 |
+|  timer/an_reg[2]_i_2_n_0  |                                   |                                 |                1 |              6 |
+|  clksig1hz/CLK            |                                   | sw_IBUF[13]                     |                3 |              8 |
+|  clksig1hz/CLK            | timer/ones                        | sw_IBUF[13]                     |                1 |              8 |
+|  clksig1hz/CLK            | timer/hundreds                    | sw_IBUF[13]                     |                2 |              8 |
+|  clksig20_BUFG            | movetank/dir[3]_i_1_n_0           |                                 |                1 |              8 |
+|  clk_IBUF_BUFG            | pixel_data                        | pixel_data[15]_i_1_n_0          |                2 |             12 |
+|  clk_IBUF_BUFG            | tx_1/r_bit_index[6]_i_2__0_n_0    | tx_1/r_bit_index[6]_i_1__0_n_0  |                2 |             12 |
+|  clk_IBUF_BUFG            | rx_1/r_bit_index[6]_i_1_n_0       |                                 |                3 |             14 |
+|  timer/seg_reg[6]_i_2_n_0 |                                   |                                 |                3 |             14 |
+|  clksig20_BUFG            | poscnt/nextx[1][7]_i_1_n_0        |                                 |                2 |             16 |
+|  clksig20_BUFG            | poscnt/nexty[1][7]_i_1_n_0        |                                 |                3 |             16 |
+|  clk_IBUF_BUFG            | tx_1/r_clock_count[8]_i_2_n_0     | tx_1/r_clock_count[8]_i_1_n_0   |                3 |             18 |
+|  clk_IBUF_BUFG            | pixel_data                        |                                 |                7 |             24 |
+|  clksig20_BUFG            | poscnt/nextx[0][7]_i_1_n_0        |                                 |                6 |             32 |
+|  clksig20_BUFG            | poscnt/xpos_bus[15]_i_1_n_0       |                                 |                5 |             32 |
+|  clksig20_BUFG            | poscnt/xpos_bus[7]_i_1_n_0        |                                 |                4 |             32 |
+| ~clksig6p25m_BUFG         |                                   | oled/frame_counter[16]_i_1_n_0  |                4 |             32 |
+| ~clksig6p25m_BUFG         | oled/delay[0]_i_1_n_0             |                                 |                5 |             40 |
+|  clksig20_BUFG            | movetank/tank_x[7]_i_1_n_0        |                                 |                9 |             58 |
+|  clk_IBUF_BUFG            | rx_1/r_clock_count[31]_i_2_n_0    | rx_1/r_clock_count[31]_i_1_n_0  |               14 |             62 |
+|  clk_IBUF_BUFG            |                                   | clk6p25m/clear__0               |                8 |             64 |
+|  clk_IBUF_BUFG            |                                   | clksig10hz/clear__0__0          |                8 |             64 |
+|  clk_IBUF_BUFG            |                                   | clksig1hz/counter[0]_i_1__1_n_0 |                8 |             64 |
+|  clksig20_BUFG            | poscnt/xpos_bus[23]_i_1_n_0       |                                 |                7 |             64 |
+|  clk_IBUF_BUFG            |                                   | clksig20hz/clear                |                8 |             64 |
+| ~clksig6p25m_BUFG         | oled/FSM_onehot_state[31]_i_1_n_0 |                                 |                8 |             64 |
+| ~clksig6p25m_BUFG         |                                   | oled/spi_word[39]_i_1_n_0       |               16 |             90 |
+|  clksig20_BUFG            |                                   |                                 |               27 |            114 |
+|  clk_IBUF_BUFG            |                                   |                                 |               44 |            120 |
+|  clk_IBUF_BUFG            | tx_1/r_tx_data                    |                                 |               23 |            128 |
+|  clksig20_BUFG            | tx_1/E[0]                         |                                 |               22 |            128 |
++---------------------------+-----------------------------------+---------------------------------+------------------+----------------+
 
 

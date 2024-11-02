@@ -26,14 +26,13 @@ module draw_P(
     input wire [6:0] y,
     input wire [6:0] ref_x,
     input wire [6:0] ref_y,
-    output reg [15:0] colour
+    output reg [5:0] colour
 
     );
     
     //define colours
-    parameter ORANGE = 16'b1111110100000000;
-    parameter YELLOW = 16'b1111111111100000;
-    parameter BLACK = 16'b0000000000000000;
+    parameter ORANGE = 6'b111000;
+    parameter YELLOW = 6'b111100;
     
     always @ (posedge clk) begin
         // two orange columns on left
@@ -69,6 +68,6 @@ module draw_P(
         else if ((x >= ref_x + 2 && x <= ref_x + 4) && (y >= ref_y + 4 && y <= ref_y + 5))
             colour <= ORANGE;
         else
-            colour <= BLACK;
+            colour <= 6'b000000;
     end 
 endmodule

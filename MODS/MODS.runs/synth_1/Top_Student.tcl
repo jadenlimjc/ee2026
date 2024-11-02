@@ -33,16 +33,19 @@ set_property ip_output_repo c:/Users/User/EE2026/EE2026/MODS/MODS.cache/ip [curr
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/res/weights.coe
 add_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/res/00.coe
+add_files -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.runs/impl_1/Top_Student_opt.dcp
+set_property used_in_implementation false [get_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.runs/impl_1/Top_Student_opt.dcp]
+add_files -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.runs/synth_1/Top_Student.dcp
+set_property used_in_implementation false [get_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.runs/synth_1/Top_Student.dcp]
+add_files -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.runs/impl_1/Top_Student_placed.dcp
+set_property used_in_implementation false [get_files C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.runs/impl_1/Top_Student_placed.dcp]
 read_verilog -library xil_defaultlib {
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/CanvasTransfer.v
-  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/custom_clock.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/module_pack.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/neural_net.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/Top_Student.v
-  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/button_press.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/count.v
-  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/debouncer_a.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/count_a.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/hud_display.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_P.v
@@ -54,6 +57,20 @@ read_verilog -library xil_defaultlib {
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/end_menu_display.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_winner.v
   C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/get_winner.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/new/draw_tank.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/is_power.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_tx.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_rx.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/syncer.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_frame.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/power_timer.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/MODS_draft.xpr/MODS/MODS.srcs/sources_1/new/check_collisions.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/bkground.v
+  C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v
 }
 read_ip -quiet C:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter.xci
 set_property used_in_implementation false [get_files -all c:/Users/User/EE2026/EE2026/MODS/MODS.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter_ooc.xdc]

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Nov  1 20:05:42 2024
+| Date             : Sun Nov  3 01:26:08 2024
 | Host             : DESKTOP-HVL0GTD running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_Student_power_routed.rpt -pb Top_Student_power_summary_routed.pb -rpx Top_Student_power_routed.rpx
 | Design           : Top_Student
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.087        |
+| Total On-Chip Power (W)  | 0.089        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.015        |
+| Dynamic (W)              | 0.017        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     3817 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     2699 |     20800 |           12.98 |
-|   CARRY4       |    <0.001 |      151 |      8150 |            1.85 |
-|   Register     |    <0.001 |      272 |     41600 |            0.65 |
-|   F7/F8 Muxes  |    <0.001 |      417 |     32600 |            1.28 |
-|   Others       |     0.000 |       24 |       --- |             --- |
-|   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |    <0.001 |     2304 |       --- |             --- |
-| I/O            |     0.012 |       30 |       106 |           28.30 |
+| Clocks         |     0.004 |        3 |       --- |             --- |
+| Slice Logic    |     0.001 |     6585 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     4232 |     20800 |           20.35 |
+|   CARRY4       |    <0.001 |      642 |      8150 |            7.88 |
+|   Register     |    <0.001 |      719 |     41600 |            1.73 |
+|   Others       |     0.000 |       53 |       --- |             --- |
+|   BUFG         |     0.000 |        2 |        32 |            6.25 |
+|   F7/F8 Muxes  |     0.000 |      135 |     32600 |            0.41 |
+| Signals        |    <0.001 |     4804 |       --- |             --- |
+| I/O            |     0.011 |       47 |       106 |           44.34 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.087 |          |           |                 |
+| Total          |     0.089 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.012 |       0.003 |      0.010 |
+| Vccint    |       1.000 |     0.016 |       0.006 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,18 +142,30 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| Top_Student  |     0.015 |
+| Top_Student  |     0.017 |
 |   clk6p25m   |    <0.001 |
 |   clksig10hz |    <0.001 |
 |   clksig1hz  |    <0.001 |
+|   clksig20hz |    <0.001 |
 |   hud        |    <0.001 |
-|     heart    |     0.000 |
+|     heart    |    <0.001 |
 |     number   |    <0.001 |
-|     player   |     0.000 |
+|     player   |    <0.001 |
 |     power    |    <0.001 |
+|   ispow      |     0.000 |
+|   movef      |     0.000 |
+|   movetank   |    <0.001 |
 |   oled       |    <0.001 |
 |   player_no  |    <0.001 |
+|   poscnt     |    <0.001 |
+|   powtime    |     0.000 |
+|   rx_1       |     0.001 |
+|   show_dis   |    <0.001 |
+|     tank1    |    <0.001 |
+|     tank2    |    <0.001 |
+|   sync       |    <0.001 |
 |   timer      |    <0.001 |
+|   tx_1       |     0.001 |
 +--------------+-----------+
 
 

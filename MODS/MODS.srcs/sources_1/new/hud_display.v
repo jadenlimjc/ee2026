@@ -23,8 +23,9 @@
 module hud_display(
     input clk,
     input [5:0] player_state,
-    input [1:0] display_settings,
-    input [12:0] pixel_index, output reg [15:0] oled_data
+    input [12:0] pixel_index, 
+    input [5:0] game_background,
+    output reg [5:0] oled_data
 
     );
    
@@ -37,10 +38,10 @@ module hud_display(
    assign x = pixel_index % SCREEN_WIDTH;
    assign y = pixel_index / SCREEN_WIDTH;
     
-    parameter BLACK = 16'b0000000000000000;
+    parameter BLACK = 0;
     
-    wire [15:0] p1, n1;
-    wire [15:0] h1, w1;
+    wire [5:0] p1, n1;
+    wire [5:0] h1, w1;
     
     draw_P player (
         .clk(clk),
@@ -79,14 +80,23 @@ module hud_display(
         .colour(w1)
     );
     
+
+    
      // state definition for player states
     // [1:0] corresponds to player no.
     // [3:2] corresponds to no. of lives.
     // [5:4] corresponds to powerups equipped   
                      
+    
     always @ (*) begin
-    oled_data = p1 | n1 | h1 | w1;
-        
+     // Start with the background color
+           oled_data = game_background;
+           
+           // Override if any `draw_` module outputs a color
+           if (p1 != BLACK) oled_data = p1;
+           else if (n1 != BLACK) oled_data = n1;
+           else if (h1 != BLACK) oled_data = h1;
+           else if (w1 != BLACK) oled_data = w1;
     end 
 
 endmodule

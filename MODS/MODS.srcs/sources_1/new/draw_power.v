@@ -27,16 +27,16 @@ module draw_power(
     input wire [6:0] ref_x,
     input wire [6:0] ref_y,
     input wire [1:0] power_state,
-    output reg [15:0] colour
+    output reg [5:0] colour
     );
     
     //define colours
-    parameter DARK_BLUE = 16'b000001000111010;
-    parameter BLUE = 16'b0100111010111111;
-    parameter LIGHT_BLUE = 16'b1011011101111111;
-    parameter RED = 16'b1111100000000000;
-    parameter ORANGE = 16'b1111110001001000;
-    parameter BLACK = 16'b0000000000000000;
+    parameter DARK_BLUE = 6'b000110;
+    parameter BLUE = 6'b001011;
+    parameter LIGHT_BLUE = 6'b101011;
+    parameter RED = 16'b110000;
+    parameter ORANGE = 16'b111000;
+        
     
     localparam [1:0] NONE = 2'b00,
                      FIRE = 2'b01,
@@ -45,9 +45,6 @@ module draw_power(
     
     always @ (posedge clk) begin
         case (power_state)
-            NONE: begin
-                colour = BLACK;
-            end
             FIRE: begin
                 if (x == ref_x && (y == ref_y + 4 || y == ref_y + 5))
                     colour = RED;
@@ -79,8 +76,8 @@ module draw_power(
                     colour = ORANGE;
                 else if (x == ref_x + 7 && (y >= ref_y + 6 && y <= ref_y + 7))
                     colour = ORANGE;
-                else
-                    colour = BLACK;
+                 else 
+                    colour = 6'b000000;
             end
             WATER: begin
                 //leftmost droplet
@@ -123,8 +120,8 @@ module draw_power(
                     colour = DARK_BLUE;
                 else if (y == ref_y + 8 && (x >= ref_x + 6 && x <= ref_x + 9))
                     colour = DARK_BLUE;
-                else
-                    colour = BLACK;
+                 else 
+                    colour = 6'b000000;
             end
             FIREWATER: begin
                 if (x == ref_x && (y == ref_y + 4 || y == ref_y + 5))
@@ -197,8 +194,8 @@ module draw_power(
                     colour = DARK_BLUE;
                 else if (y == ref_y + 8 && (x >= ref_x + 15 && x <= ref_x + 18))
                     colour = DARK_BLUE;
-                else
-                    colour = BLACK;
+                 else 
+                    colour = 6'b000000;
             end
         endcase
     end

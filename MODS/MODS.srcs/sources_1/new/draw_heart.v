@@ -27,13 +27,13 @@ module draw_heart(
     input wire [6:0] ref_x,
     input wire [6:0] ref_y,
     input wire [1:0] no_of_lives,
-    output reg [15:0] colour
+    output reg [5:0] colour
     );
     
     //define colours
-    parameter RED = 16'b1111100000000000;
-    parameter WHITE = 16'b1111111111111111;
-    parameter BLACK = 16'b0000000000000000;
+    parameter RED = 6'b110000;
+    parameter WHITE = 6'b111111;
+        
     
     localparam [1:0] ZERO = 2'b00,
                      ONE = 2'b01,
@@ -46,9 +46,6 @@ module draw_heart(
     
     always @ (posedge clk) begin
         case (no_of_lives) 
-            ZERO: begin
-                colour <= BLACK;
-            end
             ONE: begin           
                 //left and right column
                 if ((x == ref_x || x == ref_x +6) && (y >= ref_y && y <= ref_y + 2)) 
@@ -74,7 +71,7 @@ module draw_heart(
                 else if (x == ref_x + 5 && (y >= ref_y - 1 && y <= ref_y + 4))
                     colour <= RED;
                 else 
-                    colour <= BLACK;
+                    colour <= 6'b000000;
             end
             
             TWO: begin
@@ -125,7 +122,7 @@ module draw_heart(
                 else if (x == ref_x + 13 && (y >= ref_y - 1 && y <= ref_y + 4))
                     colour <= RED;
                 else 
-                    colour <= BLACK;
+                    colour <= 6'b000000;
             end
             
             THREE: begin
@@ -200,7 +197,7 @@ module draw_heart(
                 else if (x == ref_x + 21 && (y >= ref_y - 1 && y <= ref_y + 4))
                     colour <= RED;
                 else 
-                    colour <= BLACK;
+                    colour <= 6'b000000;
             end
         endcase
     end

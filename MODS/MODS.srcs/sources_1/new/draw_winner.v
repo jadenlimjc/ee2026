@@ -43,8 +43,8 @@ module draw_winner(
                     THREE = 2'b10,
                     FOUR = 2'b11;
                     
-    parameter YELLOW = 16'b1110011011100100;
-    parameter ORANGE = 16'b1110001110000101;
+    parameter ORANGE = 6'b111000;
+    parameter YELLOW = 6'b111100;
     parameter BLACK = 0;
                     
     //number goes to coords x = 31, y = 34

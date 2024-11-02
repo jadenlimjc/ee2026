@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1730460482">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1730567900">
   <File Type="PA-TCL" Name="Top_Student.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Top_Student_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Top_Student_reports.tcl"/>
@@ -33,15 +33,6 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../MODS.srcs/sources_1/new/CanvasTransfer.v"/>
         <Attr Name="ImportTime" Val="1680151347"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/Desktop/Oled_Display.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../MODS.srcs/sources_1/imports/Desktop/Oled_Display.v"/>
-        <Attr Name="ImportTime" Val="1677398246"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -131,15 +122,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/button_press.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../ee2026/MODS - individual/MODS.srcs/sources_1/new/button_press.v"/>
-        <Attr Name="ImportTime" Val="1728319228"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/count.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../ee2026/MODS - individual/MODS.srcs/sources_1/new/count.v"/>
@@ -169,15 +151,6 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../archive_project_summary.txt"/>
         <Attr Name="ImportTime" Val="1728493509"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/debouncer_a.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../MODS.srcs/sources_1/new/debouncer_a.v"/>
-        <Attr Name="ImportTime" Val="1728498458"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/count_a.v">
@@ -255,6 +228,164 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/get_winner.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/draw_tank.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/Top_Student.v">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/Top_Student.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_tank.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/is_power.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/new/is_power.v"/>
+        <Attr Name="ImportTime" Val="1730540973"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.runs/impl_1/Top_Student_opt.dcp">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.runs/impl_1/Top_Student_opt.dcp"/>
+        <Attr Name="ImportTime" Val="1730540971"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_tx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/new/uart_tx.v"/>
+        <Attr Name="ImportTime" Val="1730540973"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/uart_rx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/new/uart_rx.v"/>
+        <Attr Name="ImportTime" Val="1730540973"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/position_counter.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/is_hit.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/syncer.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/projectile2.xpr/projectile/projectile.srcs/sources_1/new/syncer.v"/>
+        <Attr Name="ImportTime" Val="1730540973"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.runs/synth_1/Top_Student.dcp">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.runs/synth_1/Top_Student.dcp"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_frame.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/move_frame.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/power_timer.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/new/power_timer.v"/>
+        <Attr Name="ImportTime" Val="1730540973"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/first_improvement/first_improvement.srcs/sources_1/new/show_display.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/MODS_draft.xpr/MODS/MODS.srcs/sources_1/new/check_collisions.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Downloads/MODS_draft.xpr/MODS/MODS.srcs/sources_1/new/check_collisions.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.runs/impl_1/Top_Student_placed.dcp">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.runs/impl_1/Top_Student_placed.dcp"/>
+        <Attr Name="ImportTime" Val="1730540971"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/new/bkground.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/new/bkground.v"/>
+        <Attr Name="ImportTime" Val="1730540973"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/first_implementation112.xpr/first_implementation111/first_implementation111.srcs/sources_1/imports/royce/Desktop/EE2026/ee2026_project/MODS/MODS.srcs/sources_1/imports/Desktop/Oled_Display.v"/>
+        <Attr Name="ImportTime" Val="1730540972"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
